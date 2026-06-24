@@ -1,0 +1,114 @@
+:root {
+    --quora-red: #b92b27;
+    --quora-dark-red: #a32421;
+    --quora-gray: #636466;
+}
+
+body {
+    background-color: #f1f2f2;
+}
+
+.quora-brand {
+    color: var(--quora-red);
+    font-weight: 800;
+    font-size: 26px;
+    font-family: 'Georgia', serif;
+    letter-spacing: -1px;
+}
+
+.nav-icon-link {
+    color: var(--quora-gray);
+    font-size: 22px;
+    padding: 6px 14px;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.nav-icon-link:hover {
+    color: #2b2b2d;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+}
+
+.nav-icon-link.active {
+    color: var(--quora-red);
+}
+
+.nav-icon-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--quora-red);
+}
+
+.search-container {
+    max-width: 500px;
+}
+
+.search-input {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-input:focus {
+    border-color: #1976d2;
+    box-shadow: none;
+}
+
+.btn-quora-plus {
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    color: var(--quora-gray);
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.btn-quora-plus:hover {
+    background-color: #f7f7f7;
+}
+
+.profile-pic {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.globe-icon {
+    color: var(--quora-gray);
+    font-size: 20px;
+}
+
+.btn-add-question {
+    background-color: var(--quora-red);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: none;
+}
+
+.btn-add-question:hover {
+    background-color: var(--quora-dark-red);
+    color: white;
+}
+
+.btn-add-question-dropdown {
+    background-color: var(--quora-red);
+    color: white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-add-question-dropdown:hover {
+    background-color: var(--quora-dark-red);
+    color: white;
+}
