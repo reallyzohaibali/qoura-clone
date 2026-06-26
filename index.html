@@ -3,63 +3,262 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Qoura</title>
-    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quora Navbar Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-xl navbar-light bg-white border-bottom py-2 shadow-sm fixed-top">
-        <div class="container" style="max-width: 1200px;">    
-            <a class="navbar-brand quora-brand me-4 pe-1" href="#">Quora</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#quoraNavbarNavigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="quoraNavbarNavigation">
-            <ul class="navbar-nav me-3 mb-2 mb-xl-0 d-flex flex-row gap-1">
-                <li class="nav-item">
-                    <a class="nav-link nav-icon-link active" href="#" title="Home"><i class="bi bi-house-door-fill"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-icon-link" href="#" title="Following"><i class="bi bi-list-task"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-icon-link" href="#" title="Answer"><i class="bi bi-pencil-square"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-icon-link" href="#" title="Spaces"><i class="bi bi-people"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-icon-link" href="#" title="Notifications"><i class="bi bi-bell"></i></a>
-                </li>
-            </ul>
-            <form class="d-flex flex-grow-1 search-container me-3 position-relative mb-2 mb-xl-0">
-                <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted" style="font-size: 14px;"></i>
-                <input class="form-control search-input ps-5 py-1 w-100" type="search" placeholder="Search Quora" aria-label="Search">
-            </form>
-            <div class="d-flex align-items-center gap-3 ms-auto">
-                <button class="btn btn-quora-plus px-3 py-1">Try Quora +</button>
-                <a href="#" class="d-block flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&h=100&q=80" alt="Profile" class="profile-pic">
-                </a>
-                <a href="#" class="globe-icon d-flex align-items-center" title="Languages"><i class="bi bi-globe"></i></a>
-                <div class="btn-group shadow-sm">
-                    <button type="button" class="btn btn-add-question px-3 py-1">Add question</button>
-                    <button type="button" class="btn btn-add-question-dropdown dropdown-toggle dropdown-toggle-split px-2" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="visually-hidden">Toggle Dropdown</span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item fs-7" href="#">Create post</a></li>
-                    </ul>
-                </div>
+
+<nav class="navbar navbar-expand-xl navbar-light bg-white border-bottom py-2 shadow-sm fixed-top">
+    <div class="container" style="max-width: 1200px;">    
+        <a class="navbar-brand quora-brand me-4 pe-1" href="#">Quora</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#quoraNavbarNavigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="quoraNavbarNavigation">
+        <ul class="navbar-nav me-3 mb-2 mb-xl-0 d-flex flex-row gap-1">
+            <li class="nav-item">
+                <a class="nav-link nav-icon-link active" href="#" title="Home"><i class="bi bi-house-door-fill"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-icon-link" href="#" title="Following"><i class="bi bi-list-task"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-icon-link" href="#" title="Answer"><i class="bi bi-pencil-square"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-icon-link" href="#" title="Spaces"><i class="bi bi-people"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-icon-link" href="#" title="Notifications"><i class="bi bi-bell"></i></a>
+            </li>
+        </ul>
+        <!-- <form class="d-flex flex-grow-1 search-container position-relative me-3">
+            <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y text-muted p-2"></i>
+            <input class="form-control search-input ps-4" type="search" placeholder="Search Quora" aria-label="Search">
+        </form> -->
+        <form class="d-flex flex-grow-1 search-container me-3 position-relative mb-2 mb-xl-0">
+            <i class="bi bi-search position-absolute top-50 translate-middle-y ms-3 text-muted" style="font-size: 16px; pointer-events: none;"></i>
+            <input class="form-control ps-5" type="search" placeholder="Search Quora" aria-label="Search" id="search">
+        </form>
+        <div class="d-flex align-items-center gap-3 ms-auto">
+            <button class="btn btn-quora-plus px-3 py-1">Try Quora +</button>
+            <a href="#" class="d-block flex-shrink-0">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&h=100&q=80" alt="Profile" class="profile-pic">
+            </a>
+            <a href="#" class="globe-icon d-flex align-items-center" title="Languages"><i class="bi bi-globe"></i></a>
+            <div class="btn-group shadow-sm">
+                <button type="button" class="btn btn-add-question px-3 py-1">Add question</button>
+                <button type="button" class="btn btn-add-question-dropdown dropdown-toggle dropdown-toggle-split px-2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item fs-7" href="#">Create post</a></li>
+                </ul>
             </div>
         </div>
     </div>
+  </div>
 </nav>
 
-<script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-</body>
+<div style="height: 5rem;"></div>
 
+<div class="container" style="max-width: 1040px;">
+    <div class="row g-4">
+        <div class="col-lg-2 d-none d-lg-block">
+            <div class="d-flex flex-column gap-1 mb-4">
+            <button class="btn btn-light border-0 text-start text-muted-custom fs-7 py-2 bg-body-secondary bg-opacity-50 mb-1" style="border-radius: 4px;">
+            <i class="bi bi-plus-lg me-2"></i>Create Space
+            </button>
+            <a href="#" class="sidebar-link">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=50&q=80" class="sidebar-icon-wrapper" alt="Proofs">
+                </div>
+                <span class="text-truncate">Proofs (mathematics)</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <div class="position-relative">
+                    <span class="notification-dot"></span>
+                    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=50&q=80" class="sidebar-icon-wrapper" alt="Geometry">
+                </div>
+                <span>Geometry</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <div class="position-relative">
+                    <span class="notification-dot"></span>
+                    <img src="https://images.unsplash.com/photo-1635070040809-b47bc4be0ee4?auto=format&fit=crop&w=50&q=80" class="sidebar-icon-wrapper" alt="Calculus">
+                </div>
+                <span>Calculus</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=50&q=80" class="sidebar-icon-wrapper" alt="Marketing">
+                </div>
+                <span>Marketing</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=50&q=80" class="sidebar-icon-wrapper" alt="Cooking">
+                </div>
+                <span>Cooking</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <div class="position-relative">
+                    <span class="notification-dot"></span>
+                    <img src="https://images.unsplash.com/photo-1543536448-d209d2d13a1c?auto=format&fit=crop&w=50&q=80" class="sidebar-icon-wrapper" alt="Mathematics">
+                </div>
+                <span>Mathematics</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=50&q=80" class="sidebar-icon-wrapper" alt="Technology">
+                </div>
+                <span>Technology</span>
+            </a>
+            <a href="#" class="sidebar-link">
+                <div class="position-relative">
+                    <span class="notification-dot"></span>
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=50&q=80" class="sidebar-icon-wrapper" alt="Science">
+                </div>
+                <span>Science</span>
+            </a>
+        </div>
+        <hr class="text-muted opacity-25">
+        <div class="lh-sm">
+            <ul class="list-unstyled">
+                <li><a href="#" class="footer-link">About</a></li>
+                <li><a href="#" class="footer-link">Careers</a></li>
+                <li><a href="#" class="footer-link">Terms</a></li>
+                <li><a href="#" class="footer-link">Privacy</a></li>
+                <li><a href="#" class="footer-link">Acceptable Use</a></li>
+                <li><a href="#" class="footer-link">Advertise</a></li>
+                <li><a href="#" class="footer-link">Ad Choices</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-10 col-lg-6 mx-auto">
+      <div class="card-quora p-3 mb-3">
+            <div class="d-flex align-items-center gap-2 mb-2">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&h=100&q=80" class="profile-pic-md" alt="User profile">
+                <div class="flex-grow-1 composer-input fs-7">What do you want to ask or share?</div>
+            </div>
+            <div class="d-flex justify-content-between border-top pt-1 mt-2">
+                <button class="composer-btn"><i class="bi bi-question-circle me-1"></i> Ask</button>
+                <div class="vr my-2 opacity-25"></div>
+                    <button class="composer-btn"><i class="bi bi-pencil-square me-1"></i> Answer</button>
+                <div class="vr my-2 opacity-25"></div>
+                <button class="composer-btn"><i class="bi bi-pencil me-1"></i> Post</button>
+            </div>
+        </div>
+
+        <div class="card-quora p-3 mb-3">
+            <div class="d-flex justify-content-between align-items-start">
+                <div class="d-flex gap-2">
+                    <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=100&h=100&q=80" class="profile-pic-md" alt="Author">
+                    <div>
+                        <div class="fw-bold fs-7">Shahriar Ahmed Biddut <span class="text-muted-custom fw-normal">· <a href="#" class="text-decoration-none">Follow</a></span></div>
+                        <div class="text-muted-custom fs-8">Full Stack Web Developer · 4h</div>
+                    </div>
+                </div>
+                <button class="btn-close fs-8" aria-label="Close"></button>
+            </div>
+        <div class="post-title">How much does it cost to build a website for a therapy practice?</div>
+        <div class="fs-7 text-secondary mb-3">
+          Depends on your requirements , agency , location , framework ! There is also initial cost ,monthly cost etc... Min Cost could be 2000 to more ...
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex gap-1 align-items-center">
+            <div class="upvote-group d-flex align-items-center">
+              <button class="btn-upvote"><i class="bi bi-arrow-up-circle me-1"></i>Upvote <span class="fw-normal text-muted ms-1">1</span></button>
+              <button class="btn-downvote"><i class="bi bi-arrow-down-circle"></i></button>
+            </div>
+            <button class="btn-action-icon ms-2" title="Comment"><i class="bi bi-chat-text"></i></button>
+            <button class="btn-action-icon" title="Share"><i class="bi bi-repeat"></i></button>
+          </div>
+          <button class="btn-action-icon" title="More options"><i class="bi bi-three-dots"></i></button>
+        </div>
+    </div>
+
+    <div class="card-quora p-3 mb-3">
+        <div class="d-flex justify-content-between align-items-start">
+          <div class="d-flex gap-2">
+            <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=100&h=100&q=80" class="profile-pic-md" alt="Author">
+            <div>
+              <div class="fw-bold fs-7">Shahriar Ahmed Biddut <span class="text-muted-custom fw-normal">· <a href="#" class="text-decoration-none">Follow</a></span></div>
+              <div class="text-muted-custom fs-8">Full Stack Web Developer · 4h</div>
+            </div>
+          </div>
+          <button class="btn-close fs-8" aria-label="Close"></button>
+        </div>
+        
+        <div class="post-title">How much does it cost to build a website for a therapy practice?</div>
+        <div class="fs-7 text-secondary mb-3">
+          Depends on your requirements , agency , location , framework ! There is also initial cost ,monthly cost etc... Min Cost could be 2000 to more ...
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex gap-1 align-items-center">
+            <div class="upvote-group d-flex align-items-center">
+              <button class="btn-upvote"><i class="bi bi-arrow-up-circle me-1"></i>Upvote <span class="fw-normal text-muted ms-1">1</span></button>
+              <button class="btn-downvote"><i class="bi bi-arrow-down-circle"></i></button>
+            </div>
+            <button class="btn-action-icon ms-2" title="Comment"><i class="bi bi-chat-text"></i></button>
+            <button class="btn-action-icon" title="Share"><i class="bi bi-repeat"></i></button>
+          </div>
+          <button class="btn-action-icon" title="More options"><i class="bi bi-three-dots"></i></button>
+        </div>
+    </div>
+
+      <div class="card-quora p-3 mb-3">
+        <div class="d-flex justify-content-between align-items-start">
+          <div class="d-flex gap-2">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" class="profile-pic-md" alt="Author">
+            <div>
+              <div class="fw-bold fs-7">Alon Amit <span class="text-muted-custom fw-normal">· <a href="#" class="text-decoration-none">Follow</a></span></div>
+              <div class="text-muted-custom fs-8">Math Circle educator, Proof School trustee · 7y</div>
+            </div>
+          </div>
+          <button class="btn-close fs-8" aria-label="Close"></button>
+        </div>
+        
+        <div class="post-title">How long did it take you to master calculus?</div>
+        <div class="fs-7 text-secondary mb-3">
+          It's been, oh, thirty five years so far, but I promise to let you know when I'm done.
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex gap-1 align-items-center">
+            <div class="upvote-group d-flex align-items-center">
+              <button class="btn-upvote"><i class="bi bi-arrow-up-circle me-1"></i>Upvote <span class="fw-normal text-muted ms-1">690</span></button>
+              <button class="btn-downvote"><i class="bi bi-arrow-down-circle"></i></button>
+            </div>
+            <button class="btn-action-icon ms-2 fs-7 text-muted-custom w-auto px-2" style="border-radius:20px;" title="Comments"><i class="bi bi-chat-text me-1"></i> 23</button>
+            <button class="btn-action-icon fs-7 text-muted-custom w-auto px-2" style="border-radius:20px;" title="Shares"><i class="bi bi-repeat me-1"></i> 2</button>
+          </div>
+          <button class="btn-action-icon" title="More options"><i class="bi bi-three-dots"></i></button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-lg-4 d-none d-lg-block">
+      <div class="position-sticky" style="top: 20px;">
+        <div class="ad-box d-flex align-items-center justify-content-center text-muted">
+          </div>
+        <div class="ad-footer shadow-sm">
+          Advertisement
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
