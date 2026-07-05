@@ -1,3 +1,7 @@
+CREATE DATABASE quora_db;
+USE quora_db;
+
+-- 1. Create Core Platform Tables
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -45,38 +49,21 @@ CREATE TABLE answers (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE votes (
+-- 2. Create the Separate Upvote/Downvote System (Fixed for MySQL)
+CREATE TABLE upvotes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     item_id INT NOT NULL,
     item_type VARCHAR(20) NOT NULL,
-    vote_type INT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    CONSTRAINT unique_user_upvote UNIQUE (user_id, item_id, item_type)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-    UNIQUE KEY unique_user_item_vote (user_id, item_id, item_type)
--- Drop the old confusing system
-DROP TABLE IF EXISTS votes;
-
--- Table to track exclusively UPVOTES
-CREATE TABLE upvotes (
-    id SERIAL PRIMARY KEY, -- use INT AUTO_INCREMENT for MariaDB
-    user_id INT NOT NULL,
-    item_id INT NOT NULL,
-    item_type VARCHAR(20) NOT NULL, -- 'post' or 'question'
-    CONSTRAINT unique_user_upvote UNIQUE (user_id, item_id, item_type)
-);
-
--- Table to track exclusively DOWNVOTES
 CREATE TABLE downvotes (
-    id SERIAL PRIMARY KEY, -- use INT AUTO_INCREMENT for MariaDB
+    id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     item_id INT NOT NULL,
-    item_type VARCHAR(20) NOT NULL, -- 'post' or 'question'
+    item_type VARCHAR(20) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     CONSTRAINT unique_user_downvote UNIQUE (user_id, item_id, item_type)
-);
-
-ALTER TABLE answers DROP CONSTRAINT IF EXISTS answers_question_id_fkey;
-ALTER TABLE answers ADD CONSTRAINT answers_question_id_fkey 
-FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
