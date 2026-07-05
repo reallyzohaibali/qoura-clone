@@ -4,23 +4,23 @@
 
 function getDBConnection() {
     // Development Switch, 
-    $driver = 'postgres'; 
+    // $driver = 'postgres'; 
 
     try {
-        if ($driver === 'postgres') {
-            $host = 'localhost';
-            $port = '5432';
-            $db   = 'quora_db';
-            $user = 'quora';
-            $pass = '090090800908';
-            $dsn = "pgsql:host=$host;port=$port;dbname=$db;";
-        } else {
+        // if ($driver === 'postgres') {
+        //     $host = 'localhost';
+        //     $port = '5432';
+        //     $db   = 'quora_db';
+        //     $user = 'quora';
+        //     $pass = '090090800908';
+        //     $dsn = "pgsql:host=$host;port=$port;dbname=$db;";
+        // } else {
             $host = '127.0.0.1';
             $db   = 'quora_db';
             $user = 'root';
             $pass = '';
             $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
-        }
+        // }
 
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,

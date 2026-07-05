@@ -1,7 +1,6 @@
 <div class="modal fade" id="composerModal" tabindex="-1" aria-labelledby="composerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" style="border-radius: 8px;">
-            
+        <div class="modal-content" style="border-radius: 8px;">            
             <div class="modal-header border-bottom-0 pb-0">
                 <ul class="nav nav-tabs w-100 border-bottom-0" id="composerTabs" role="tablist">
                     <li class="nav-item flex-fill text-center" role="presentation">
@@ -19,7 +18,7 @@
                     
                     <input type="hidden" name="content_type" id="content_type" value="question">
                     
-                    <input type="hidden" name="user_id" value="1">
+                    <input type="hidden" name="user_id" value="<?= $_SESSION['user']['id'] ?>">
 
                     <div class="mb-3">
                         <label for="topic_id" class="form-label fs-7 fw-bold text-muted">Select a Topic</label>

@@ -76,3 +76,7 @@ CREATE TABLE downvotes (
     item_type VARCHAR(20) NOT NULL, -- 'post' or 'question'
     CONSTRAINT unique_user_downvote UNIQUE (user_id, item_id, item_type)
 );
+
+ALTER TABLE answers DROP CONSTRAINT IF EXISTS answers_question_id_fkey;
+ALTER TABLE answers ADD CONSTRAINT answers_question_id_fkey 
+FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE;
